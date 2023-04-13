@@ -5,6 +5,10 @@
     /// </summary>
     public class Criadores
     {
+        public Criadores() { 
+            ListaAnimais=new HashSet<Animais>();
+            ListaRacas=new HashSet<Racas>();
+        }
         /// <summary>
         /// PK
         /// </summary>
@@ -40,5 +44,15 @@
         /// </summary>
         public string Telemovel { get; set; }
        
+        /// <summary>
+        /// FK para a lista de cães/cadelas, propriedade do criador
+        /// </summary>
+        public ICollection<Animais> ListaAnimais { get; set;}
+
+        /// <summary>
+        /// M-N
+        /// FK para a lista de Raças atribuidas ao criador
+        /// </summary>
+        public ICollection<Racas> ListaRacas { get; set; }
     }
 }
