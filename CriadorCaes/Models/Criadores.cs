@@ -22,6 +22,7 @@ namespace CriadorCaes.Models
         /// </summary>
         [Required(ErrorMessage ="O {0} é de preenchimento obrigatório")]
         [Display(Name = "Nome")]
+        
         public string Nome { get; set;}
 
         /// <summary>
@@ -39,6 +40,8 @@ namespace CriadorCaes.Models
         /// Código postal
         /// </summary>
         [Display(Name = "Código Postal")]
+        [RegularExpression("[1-9][0-9]{3}-[0-9]{3} [A-ZÇÁÃÂÀÕ]+",ErrorMessage ="O {0} tem de ser de forma XXXX-XXX NOME DA TERRA")]
+        [StringLength(50)]
         public string CodPostal { get; set;}
 
         /// <summary>
@@ -46,6 +49,9 @@ namespace CriadorCaes.Models
         /// </summary>
         [EmailAddress(ErrorMessage ="O {0} não está escrito corretamente")]
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório")]
+        [RegularExpression("[a-z._0-9]+@gmail.com", ErrorMessage ="")]
+        [StringLength(40)]
+        //[RegularExpression("(([abcde.....xyz._]+)| (aluno|estt|esgt|esta) [0-9] {}")]
         public string Email { get; set;}
 
         /// <summary>
@@ -53,6 +59,9 @@ namespace CriadorCaes.Models
         /// </summary>
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório")]
         [Display(Name ="Telemóvel")]
+        [StringLength(9, MinimumLength =9,ErrorMessage ="O {0} deve ter {1} digitos")]
+        [RegularExpression("9[1236][0-9]{7}", ErrorMessage ="O número de {0} deve começar por 91,92,93,96 e só pode escrever digitos")]
+        //((+100)[0-9]{2,5})?[0 - 9]{5,9}
         public string Telemovel { get; set; }
        
         /// <summary>
