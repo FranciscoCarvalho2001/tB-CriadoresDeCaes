@@ -130,7 +130,7 @@ namespace CriadorCaes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,DataCompra,Sexo,NumLOP,RacaFk,CriadorFK")] Animais animais)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,DataCompra,Sexo,NumLOP,RacaFk,CriadorFK")] Animais animais, IFormFile imagemAnimal)
         {
             if (id != animais.Id)
             {
