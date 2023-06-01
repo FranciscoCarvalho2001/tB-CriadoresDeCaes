@@ -13,6 +13,7 @@
     <thead>
         <tr>
             <th>
+                @*aqui estamos a ler o conteúdo dos registos*@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
@@ -28,10 +29,10 @@
                 @Html.DisplayNameFor(model => model.NumLOP)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Raca)
+                @Html.DisplayNameFor(model => model.Raca.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Criadores)
+                @Html.DisplayNameFor(model => model.Criadores.Nome)
             </th>
             <th></th>
         </tr>

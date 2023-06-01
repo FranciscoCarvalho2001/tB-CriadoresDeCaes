@@ -21,17 +21,22 @@ namespace CriadorCaes.Models
         /// <summary>
         /// nome do cão/cadela
         /// </summary>
-        public string Nome { get; set; }    
+        public string Nome { get; set; }
 
         /// <summary>
         /// data de nascimento
         /// </summary>
+        [Display(Name ="Data de Nascimento")]
+        [Required(ErrorMessage ="A {0} é de preenchimento obrigatório")]
         public DateTime DataNascimento { get; set; }
 
         /// <summary>
         /// data em que o cão foi comprado
         /// </summary>
-        public DateTime DataCompra {get; set; }
+        public DateTime? DataCompra {get; set; }
+        // o uso do ? transforma o atributo, tornando-o facultativo
+        // se já tiver transferido o Modelo para a BD
+        //é preciso atualizar a BD com uma nova migração
 
         /// <summary>
         /// Sexo do cão 
